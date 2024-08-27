@@ -61,7 +61,7 @@ include "../../includes/sidebar.php";
               <div class="icon">
                 <i class="fa fa-users"></i>
               </div>
-              <a href="add_librarian.php" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="../admin/add_librarian.php" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
 

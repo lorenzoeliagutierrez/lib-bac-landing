@@ -2,13 +2,10 @@
 session_start();
 ob_start();
 include "conn.php";
-?>
 
-<?php
-if (!isset($_SESSION['userid'])){
-header('location:../pages/index.php');
+if (empty($_SESSION['role'])) {
+    header('location:../../pages/login/login.php');
 }
-$id_session=$_SESSION['userid'];
-include "conn.php";
-
+$id_session = $_SESSION['userid'];
 ?>
+

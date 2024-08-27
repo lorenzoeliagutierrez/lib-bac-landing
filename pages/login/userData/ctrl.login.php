@@ -14,8 +14,9 @@ session_start();
 
             $student = mysqli_query($con, "SELECT * from user where username = '$username' ");
             $numrow1 = mysqli_num_rows($student);
-            $guest = mysqli_query($con, "SELECT * from guest where username = '$username' ");
-            $numrow3 = mysqli_num_rows($guest);
+
+            // $guest = mysqli_query($con, "SELECT * from guest where username = '$username' ");
+            // $numrow3 = mysqli_num_rows($guest);
 
  if($numrow > 0)
             {   
@@ -31,6 +32,7 @@ session_start();
                   {
                     $_SESSION['role'] = "Administrator";
                     $_SESSION['userid'] = $row['admin_id'];
+                    $_SESSION['campus_id'] = $row['campus_id'];
                   }    
                   header("location:../../dashboard/admin_home.php");
                 }

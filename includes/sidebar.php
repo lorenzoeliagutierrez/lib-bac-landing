@@ -33,7 +33,7 @@ echo '
         if($_SESSION['role'] == "Administrator"){
                             echo '
           <li class="nav-item menu-open">
-            <a href="admin_home.php" class="nav-link active">
+            <a href="../dashboard/admin_home.php" class="nav-link active">
               <i class="nav-icon fas fa-home"></i>
               <p>
                Home
@@ -41,7 +41,7 @@ echo '
             </a>
 
                <li class="nav-item">
-            <a href="../dashboard/search_book.php" class="nav-link">
+            <a href="../book/search_book.php" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                   Search Book
@@ -50,7 +50,7 @@ echo '
           </li>
 
           <li class="nav-item">
-            <a href="../dashboard/search_ebook.php" class="nav-link">
+            <a href="../ebook/search_ebook.php" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                   Search E-Book
@@ -68,33 +68,69 @@ echo '
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../dashboard/thesis.php" class="nav-link">
+                <a href="../thesis/thesis.php" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Search Special Collection</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../dashboard/add_thesis.php" class="nav-link">
+                <a href="../thesis/add_thesis.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Add Special Collection</p>
                 </a>
               </li>
                <li class="nav-item">
-                <a href="../dashboard/borrow_collection.php" class="nav-link">
+                <a href="../thesis/borrow_collection.php" class="nav-link">
                   <i class="fas fa-shopping-cart nav-icon"></i>
                   <p> Special Collection Checkout</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../dashboard/add_category.php" class="nav-link">
+                <a href="../category/add_category.php" class="nav-link">
                   <i class="fas fa-list nav-icon"></i>
                   <p> Categories</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../dashboard/add_course.php" class="nav-link">
+                <a href="../course/add_course.php" class="nav-link">
                   <i class="fas fa-list nav-icon"></i>
                   <p>Courses</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Article Index
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../article/article.php" class="nav-link">
+                  <i class="fas fa-search nav-icon"></i>
+                  <p>Search Articles</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../article/add_article.php" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Add Article</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="../article/borrow_article.php" class="nav-link">
+                  <i class="fas fa-shopping-cart nav-icon"></i>
+                  <p> Article Checkout</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../period_title/add_pt.php" class="nav-link">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>Periodical Title</p>
                 </a>
               </li>
             </ul>
@@ -111,13 +147,13 @@ echo '
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../dashboard/user.php" class="nav-link">
+                <a href="../users/user.php" class="nav-link">
                   <i class="fas fa-user nav-icon"></i>
                   <p>Search User</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../dashboard/add_user.php" class="nav-link">
+                <a href="../users/add_user.php" class="nav-link">
                   <i class="fas fa-user-plus nav-icon"></i>
                   <p>Add User</p>
                 </a>
@@ -162,42 +198,52 @@ echo '
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../dashboard/book.php" class="nav-link">
+                <a href="../book/book.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Add Book</p>
                 </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="../dashboard/ebook.php" class="nav-link">
+              </li>';
+if ($_SESSION['userid'] == 99) {
+              echo '<li class="nav-item">
+                <a href="../ebook/ebook.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Add E-Book</p>
                 </a>
-              </li>
+              </li>'; }
 
-              <li class="nav-item">
-                <a href="../dashboard/moa.php" class="nav-link">
+              echo '<li class="nav-item">
+                <a href="../moa/moa.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Mode Of Acquisition</p>
                 </a>
               </li>
                  <li class="nav-item">
-                <a href="../dashboard/publisher.php" class="nav-link">
+                <a href="../publisher/publisher.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Publisher</p>
                 </a>
               </li>
                  <li class="nav-item">
-                <a href="../dashboard/pop.php" class="nav-link">
+                <a href="../pop/pop.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Place of Publication</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="../campus/campus.php" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Campus</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../department/department.php" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Department</p>
+                </a>
+              </li>
             </ul>
           </li>
-
-              
-            <li class="nav-header">LIBRARY SERVICES</li>
+          <li class="nav-header">LIBRARY SERVICES</li>
                   <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
@@ -208,24 +254,25 @@ echo '
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../dashboard/borrow.php" class="nav-link">
+                <a href="../borrow/borrow.php" class="nav-link">
                   <i class="fas fa-shopping-cart nav-icon"></i>
                   <p>Reader Check-out</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../dashboard/settings.php" class="nav-link">
+                <a href="../settings/settings.php" class="nav-link">
                   <i class="fas fa-list nav-icon"></i>
                   <p>Settings</p>
                 </a>
               </li>
+              
             </ul>
           </li>
 
 
             <li class="nav-header">SUMMARY REPORTS</li>
            <li class="nav-item">
-            <a href="../dashboard/borrowed_book.php" class="nav-link">
+            <a href="../borrow/borrowed_book.php" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                   Borrowed Books
@@ -234,13 +281,16 @@ echo '
           </li>
 
           <li class="nav-item">
-            <a href="../dashboard/returned_book.php" class="nav-link">
+            <a href="../borrow/returned_book.php" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                   Returned Books
               </p>
             </a>
-          </li>
+          </li>';
+
+       if ($_SESSION['userid'] == 99) {  
+            echo '
 
            <li class="nav-item">
             <a href="#" class="nav-link">
@@ -252,19 +302,19 @@ echo '
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../dashboard/utilization_record.php" class="nav-link">
+                <a href="../utilization/utilization_record.php" class="nav-link">
                   <i class="fas fa-check nav-icon"></i>
                   <p>Active Records</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../dashboard/inactive_records.php" class="nav-link">
+                <a href="../utilization/inactive_records.php" class="nav-link">
                   <i class="fas fa-times nav-icon"></i>
                   <p>Inactive Records</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../dashboard/inventory.php" class="nav-link">
+                <a href="../utilization/inventory.php" class="nav-link">
                   <i class="fas fa-briefcase nav-icon"></i>
                   <p>Inventory</p>
                 </a>
@@ -282,13 +332,13 @@ echo '
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../dashboard/archives.php" class="nav-link">
+                <a href="../archives/archives.php" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Inactive Books</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../dashboard/arc_thesis.php" class="nav-link">
+                <a href="../archives/arc_thesis.php" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Inactive Collection</p>
                 </a>
@@ -298,7 +348,7 @@ echo '
 
             <li class="nav-header">DATABASE MAINTENANCE</li>
            <li class="nav-item">
-            <a href="../dashboard/backup.php" class="nav-link">
+            <a href="../database/backup.php" class="nav-link">
               <i class="nav-icon fa fa-database"></i>
               <p>
                  Backup Database
@@ -307,18 +357,18 @@ echo '
           </li>
 
           <li class="nav-item">
-            <a href="../dashboard/restore.php" class="nav-link">
+            <a href="../database/restore.php" class="nav-link">
               <i class="nav-icon fa fa-database"></i>
               <p>
                   Restore Database
               </p>
             </a>
           </li>';
-}
+} }
  elseif($_SESSION['role'] == "Student"){
                             echo '
           <li class="nav-item menu-open">
-            <a href="user_home.php" class="nav-link active">
+            <a href="../dashboard/user_home.php" class="nav-link active">
               <i class="nav-icon fas fa-home"></i>
               <p>
                Home
@@ -326,7 +376,7 @@ echo '
             </a>
 
           <li class="nav-item">
-            <a href="../dashboard/search_book.php" class="nav-link">
+            <a href="../book/search_book.php" class="nav-link">
               <i class="nav-icon fa fa-search"></i>
               <p>
                   Search Book
@@ -336,7 +386,7 @@ echo '
 
 
           <li class="nav-item">
-            <a href="../dashboard/search_user_ebook.php" class="nav-link">
+            <a href="../ebook/search_ebook.php" class="nav-link">
               <i class="nav-icon fa fa-search"></i>
               <p>
                   Search E-Book
@@ -345,7 +395,7 @@ echo '
           </li>
 
           <li class="nav-item">
-            <a href="../dashboard/thesis.php" class="nav-link">
+            <a href="../thesis/thesis.php" class="nav-link">
               <i class="nav-icon fa fa-search"></i>
               <p>
                   Search Special Collection
@@ -354,7 +404,7 @@ echo '
           </li>
 
             <li class="nav-item">
-            <a href="../dashboard/archives.php" class="nav-link">
+            <a href="../archives/archives.php" class="nav-link">
               <i class="nav-icon fa fa-search"></i>
               <p>
                   Search Archived Book
@@ -364,26 +414,7 @@ echo '
 
 
            <li class="nav-item">
-            <a href="userbook.php" class="nav-link">
-              <i class="nav-icon fa fa-book"></i>
-              <p>
-                  Book List
-              </p>
-            </a>
-          </li>
-
-           <li class="nav-item">
-            <a href="userebook.php" class="nav-link">
-              <i class="nav-icon fa fa-book"></i>
-              <p>
-                  E-Book List
-              </p>
-            </a>
-          </li>
-
-
-           <li class="nav-item">
-            <a href="../dashboard/userborrow.php" class="nav-link">
+            <a href="../users/userborrow.php" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                   Borrowed Books
@@ -392,7 +423,7 @@ echo '
           </li>
 
             <li class="nav-item">
-            <a href="../dashboard/userhistory.php" class="nav-link">
+            <a href="../users/userhistory.php" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                  Borrow History
@@ -403,7 +434,7 @@ echo '
  elseif($_SESSION['role'] == "Super Admin"){
                             echo '
           <li class="nav-item menu-open">
-            <a href="super_admin_home.php" class="nav-link active">
+            <a href="../dashboard/super_admin_home.php" class="nav-link active">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -411,7 +442,7 @@ echo '
             </a>
 
           <li class="nav-item">
-            <a href="../dashboard/search_book.php" class="nav-link">
+            <a href="../book/search_book.php" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                   Search Book
@@ -421,7 +452,7 @@ echo '
 
         <li class="nav-header">LIBRARIAN MAINTENANCE</li>
            <li class="nav-item">
-            <a href="../dashboard/add_librarian.php" class="nav-link">
+            <a href="../admin/add_librarian.php" class="nav-link">
               <i class="nav-icon fa fa-user-plus"></i>
               <p>
                   Add Librarians
@@ -430,7 +461,7 @@ echo '
           </li>
 
             <li class="nav-item">
-            <a href="../dashboard/librarian_list.php" class="nav-link">
+            <a href="../admin/librarian_list.php" class="nav-link">
               <i class="nav-icon fa fa-user"></i>
               <p>
                  List of Librarians
@@ -440,7 +471,7 @@ echo '
 
             <li class="nav-header">DATABASE MAINTENANCE</li>
            <li class="nav-item">
-            <a href="../dashboard/backup.php" class="nav-link">
+            <a href="../database/backup.php" class="nav-link">
               <i class="nav-icon fa fa-database"></i>
               <p>
                   Backup Database
@@ -449,7 +480,7 @@ echo '
           </li>
 
             <li class="nav-item">
-            <a href="../dashboard/restore.php" class="nav-link">
+            <a href="../database/restore.php" class="nav-link">
               <i class="nav-icon fa fa-database"></i>
               <p>
                  Restore Database

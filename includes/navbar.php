@@ -62,21 +62,21 @@
               while ($row= mysqli_fetch_array ($result) ){
                 $id=$row['admin_id'];
               echo '
-                  <a href="edit_admin.php?admin_id='.$id.'" class="btn btn-default btn-flat"><i class="fa fa-edit" aria-hidden="true"></i>  Edit Profile</a>';}
+                  <a href="../admin/edit_admin.php?admin_id='.$id.'" class="btn btn-default btn-flat"><i class="fa fa-edit" aria-hidden="true"></i>  Edit Profile</a>';}
                 }
                 elseif ($_SESSION['role'] == "Student") {
                   $result= mysqli_query($con,"select * from user where user_id = '".$_SESSION['userid']."' ") or die (mysql_error());
               while ($row= mysqli_fetch_array ($result) ){
                 $id=$row['user_id'];
               echo '
-                  <a href="edit_user_prof.php?user_id='.$id.'" class="btn btn-default btn-flat"><i class="fa fa-edit" aria-hidden="true"></i>  Edit Profile</a>';}
+                  <a href="../users/edit_user_prof.php?user_id='.$id.'" class="btn btn-default btn-flat"><i class="fa fa-edit" aria-hidden="true"></i>  Edit Profile</a>';}
                 }
                 elseif ($_SESSION['role'] == "Super Admin") {
                   $result= mysqli_query($con,"select * from tbl_super_admins where sa_id = '".$_SESSION['userid']."' ") or die (mysql_error());
               while ($row= mysqli_fetch_array ($result) ){
                 $id=$row['sa_id'];
               echo '
-                  <a href="edit_user_super_admin.php?user_id='.$id.'" class="btn btn-default btn-flat"><i class="fa fa-edit" aria-hidden="true"></i>  Edit Profile</a>';}
+                  <a href="../admin/edit_user_super_admin.php?user_id='.$id.'" class="btn btn-default btn-flat"><i class="fa fa-edit" aria-hidden="true"></i>  Edit Profile</a>';}
                 }
                  elseif ($_SESSION['role'] == "Guest") {
                   $result= mysqli_query($con,"select * from guest where guest_id = '".$_SESSION['userid']."' ") or die (mysql_error());
